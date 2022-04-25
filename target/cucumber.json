@@ -1,0 +1,262 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-04-25T08:18:57.816Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2478366000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.beforeScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Validation of url contains Overview and print url to the console",
+        "description": "",
+        "id": "validation-of-zooplus-products-and-its-price-values-comparision;validation-of-url-contains-overview-and-print-url-to-the-console",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5957168600,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User opens the URL \"https://www.zooplus.com/checkout/cartEmpty.htm\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"https://www.zooplus.com/checkout/cartEmpty.htm\"",
+                  "offset": 19
+                }
+              ],
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_opens_the_url(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5548345800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User Click on Agree and Continue",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_click_on_agree_and_continue()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4673725400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User adds one product to cart and validates the URL",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_adds_one_product_to_cart_and_validates_the_url()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-04-25T08:19:16.524Z",
+        "before": [
+          {
+            "result": {
+              "duration": 969600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.beforeScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Validation of multiple products addition to cart and Sorting the prices",
+        "description": "",
+        "id": "validation-of-zooplus-products-and-its-price-values-comparision;validation-of-multiple-products-addition-to-cart-and-sorting-the-prices",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 19934405700,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User add multiple products to cart",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_add_multiple_products_to_cart()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 190284000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User gets the List of all prices and printing the price values before sorting",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_gets_the_list_of_all_prices_and_printing_the_price_values_before_sorting()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1000100,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User sorting the price values in the Decending order and printing after sorting",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_sorting_the_price_values_in_the_decending_order_and_printing_after_sorting()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-04-25T08:19:36.659Z",
+        "before": [
+          {
+            "result": {
+              "duration": 997800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.beforeScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Validation the Deletion of Highest price value and Asserting the Subtotal and Total Individually",
+        "description": "",
+        "id": "validation-of-zooplus-products-and-its-price-values-comparision;validation-the-deletion-of-highest-price-value-and-asserting-the-subtotal-and-total-individually",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User finds the minumum and maximum value of the product in the cart",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_finds_the_minumum_and_maximum_value_of_the_product_in_the_cart()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5097673500,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User increases one more quanity for the lowest price product",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_increases_one_more_quanity_for_the_lowest_price_product()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5226821700,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User deletes the Maximum price value product",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_deletes_the_maximum_price_value_product()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20329658200,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User Verifies the Sum of SubTotal and Total value of product",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_verifies_the_sum_of_sub_total_and_total_value_of_product()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-04-25T08:20:07.322Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1002700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.beforeScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 23,
+        "name": "Validation of  Subtotal and total prices for Different Shipping Country",
+        "description": "",
+        "id": "validation-of-zooplus-products-and-its-price-values-comparision;validation-of--subtotal-and-total-prices-for-different-shipping-country",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8508556200,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "User changes the shipping country to Portugal with postalcode",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_changes_the_shipping_country_to_portugal_with_postalcode()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 94956800,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "User verfies shipping charges of the selected country and  Printing them",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_verfies_shipping_charges_of_the_selected_country_and_printing_them()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20205896400,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "User Verifies the Sum of SubTotal and Total value of product",
+            "match": {
+              "location": "Stepdefs.TestCaseValidationStepdefinition.user_verifies_the_sum_of_sub_total_and_total_value_of_product()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Validation of ZooPlus Products and its Price values Comparision",
+    "description": "",
+    "id": "validation-of-zooplus-products-and-its-price-values-comparision",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/ZooPlusAutomationTask.feature",
+    "tags": []
+  }
+]
