@@ -1,0 +1,237 @@
+Feature: Validation of ZooPlus Products and its Price values Comparision
+
+
+
+#TS-01
+  Scenario: Validation of price values by Increasing and Decreasing the Products quantity in the Shopping Baseket
+    Given User adds a product to cart
+    When User  Increase the quantity of the added product
+    And User verifies the quantity is increased
+    Then User verfies the Price value of the Single Quantity and Increased Quantity
+
+
+#TS-02
+  Scenario: Validation of adding the products to Shopping basket from You Might also like Grid 
+    Given User adds a product to cart from you might also like grid 
+    When User  verifies the produts added to shopping basket
+    And User verifies the price values of the product before and after adding to cart
+    Then User Clicks on the Slider icon and add discounted product to cart
+    And  User verifies the price values with Individually and Now label for the product
+    And User verifies the price values of the product before and after adding to cart
+  
+#TS-03
+  Scenario: Validation of adding the products to Shopping basket from Other recommended products Grid 
+    Given User adds a product to cart from you might also like grid 
+    When User  verifies the produts added to shopping basket
+    And User verifies the price values of the product before and after adding to cart
+    Then User Clicks on the Slider icon and add discounted product to cart
+    And  User Asserts the price values with Individually and Now label present for the product
+    And User Asserts the price values of the product before and after adding to cart
+
+#TS-04
+  Scenario: Validation of look and feel of the Shopping basket Page
+    Given User adds multiple product to cart 
+    When User  verfies the Images of the Products are displayed completely without broken in the shopping basket
+    Then User verifies the Description of the Products are displayed
+    And  User verifies the Defaulted discount price values are displayed
+    When User Peforms Refreshing the page  and verifies the Produts are completely loaded in the page 
+    And User verifies the Sliding icon in the products grid is able to load the products successfully 
+    And User verfies all the buttons and Labels of the Shopping basket page is displayed completely
+    
+ #TS-05
+  Scenario: Validation of Subtotal and Total value with and without Shipping charges
+    Given User adds some products to the cart with product price Lesser than €49 
+    When User selects country which has No shipping fees when the price value is greater than €49
+    Then  User verifies the Subtotal value and Total value Individually for price value lesser than €49
+    And Increase the quantity with the price values Greater than €49 for the same country
+    And User Compares Price values of Subtotal and Total
+
+#TS-06
+  Scenario: Validation of adding Products with 20 Quantity to the cart and able to check out
+    Given User adds the products with 20 quantity         
+    When User selects the  country "<Country>" for shipping
+    And User verifies the  Shipping charges applied for the selected Country
+    And Click on Proceed to check out
+
+#TS-07
+  Scenario: Validation of Notification message text on standard shipping free in the shopping basket 
+    Given User adds the non discounted product with the price €15 less than product price eligible for free shipping         
+    When User selects the  country "Estonia" for shipping
+    Then User calculates the "Expected Price" remaining for free shipping 
+    And User verifies the  Notification message as "If you add "ActualPrice" of goods to your basket, standard shipping is free!" is displayed
+    And User Asserts the "Expected Price" and "ActualPrice" are correct
+    
+ 
+#TS-08
+  Scenario Outline: Validation of Shipping Charges applies to Country  for the product price value Lesser than and Greater than 49 Euro 
+    Given User adds a single or multiple product with the price Lesser €49  to the cart
+    When User selects "<Country>" which has shipping fees applicable
+    Then User verifies the expected shipping fees is displayed for the selected country
+    And  User Increases the Quantity with the price value greater than €49  for the same country
+    And User verfies there should not be any shipping fees displayed for the selected country
+
+    Examples: 
+    |Country|
+    |Germany|
+    |Austria|
+
+
+#TS-09
+  Scenario Outline: Validation of Shipping Charges always applies to Specific countries for the product price value  greater than 100 Euro
+    Given User adds a single or multiple product with the price Greater €100 to the cart
+    When User selects the "<Country>" which has shipping fees applicable
+    Then User verifies the expected shipping fees is displayed for the selected country
+  
+
+    Examples: 
+    |Country|               
+    |Balearic Islands|
+    |Switzerland (from EU)| 
+    |Sweden|                
+    |Finland|              
+    |Denmark|               
+    |Portugal|              
+    |Northern Ireland|
+
+
+
+
+#TS-10
+  Scenario: Validation of Shipping Charges applies to Selected Country for the product price value Lesser than and Greater than 59 Euro 
+    Given User adds a single or multiple product with the price Lesser €59 to the cart
+    When User selects the "Greece" which has shipping fees applicable
+    Then User verifies Expected shipping fees displayed for the selected country
+    And  User Increases the Quantity with the price value greater than €59 for the same country
+    And User verfies there should not be any shipping fees displayed for the selected country
+
+#TS-11
+  Scenario Outline: Validation of Shipping Charges applies to Country for the product price value Lesser than and Greater than 69.90 Euro 
+    Given User adds a single or multiple product with the price Lesser than €69.90 to the cart
+    When User selects the "<Country>" which has shipping fees applicable
+    Then User verifies Expected shipping fees displayed for the selected countries
+    And  User Increases the Quantity with the price value greater than €69.90 for the same country
+    And User verfies there should not be any shipping fees displayed for the selected country
+
+    Examples: 
+    |Country|
+    |Estonia|
+    |Croatia|
+
+#TS-12
+  Scenario Outline: Validation of Shipping Charges applies to Country for the product price value Lesser than and Greater than 99.9 Euro 
+    Given User adds a single or multiple product with the price Lesser than €99.9 to the cart
+    When User selects the "<Country>" which has shipping fees applicable
+    Then User verifies Expected shipping fees displayed for the selected countries
+    And  User Increases the Quantity with the price value greater than €99.9 for the same country
+    And User verfies there should not be any shipping fees displayed for the selected country
+
+    Examples: 
+    |Country|
+    |Ireland|
+    |Italy|
+    |Hungary|
+
+ 
+
+
+#TS-13
+  Scenario outline: Validation of Total product price with addition of Service charges for the additional parcel for the selected country
+    Given User adds multiple products with with Total weight greater than 31kg to the cart
+    When User selects the  "<Country>"  for shipping  
+    Then User verifies the Green color label "Service charge for additional parcels" for  the selected Country is displayed along with the price values
+    And  User clicks on the label and Verifies the description of the Service charges is displayed
+    And  User asserts the Total price of the products
+    
+    
+
+Examples:
+    |Country|
+    |Northen Island|
+    |Switzerland (from EU)|
+    |Croatia|
+    |Portugal|
+ 
+      
+#TS-14
+  Scenario: Validation of Applying valid coupon code on Single and All products
+    Given User adds multiple products to the cart         
+    When User Apply the Coupon code Applies only to single product
+    And  User verifies the coupon applied successfully only for the specified product
+    And  User Verifies the Prices value of the specific product with discounted price
+    When User Apply another coupon code applies to all the product
+    And  User verifies the Coupon appplied successfully to all the products
+    Then User Verifies the Prices value of the all products with discounted price
+
+#TS-15
+  Scenario: Validation of the Deletion of product with Multiple Quantity from the cart
+    Given User adds some products to the cart 
+    When  User verifies the Subtotal value and total price values        
+    Then  User Click on the Delete icon 
+    And   User verifies the products deleted successfully message "The item was successfully removed."
+    And  User verifies the Subtotal value and total price values is changed or reduced
+
+#TS-16
+  Scenario: Validation of the Deletion of product with Single Quantity from the cart
+    Given User adds a single to the cart 
+    When  User Click on the reduceQuantityBtn icon           
+    Then   User verifies the products deleted successfully message "The item was successfully removed."
+    And  User verifies the Subtotal value and total price values is changed or reduced
+
+
+
+
+Negative Scenarioes:
+
+#TS-17
+  Scenario: Validation of Adding the product with more than 20 Quantity
+    Given User adds More than 20 products to the cart
+    Then User verifies the Alert message in the window as "You have exceeded the maximum order quantity of 20 for one of the items in your basket. Please review your order"
+
+#TS-18
+  Scenario: Validation of Using Invalid Coupon code in the Cart
+
+    Given User adds products to the cart
+    Then User tries to apply Invalid Coupon as "sdsdsdsdsddsds"
+    And  User verifies the message "The coupon code sdsdsdsdsddsds does not exist"
+
+#TS-19
+  Scenario: Validation of Same Coupon code twice in the Cart
+
+    Given User adds products to the cart
+    Then User tries to apply Valid Coupon code
+    And  User verifies the message for the successfull coupon apply
+    And  User tries to apply the same coupon code second time
+    Then User verifies the Error message displayed
+
+#TS-20
+  Scenario: Validation of giving Invalid Postal code for the country
+
+    Given User adds products to the cart
+    When User select any country from the drop down
+    Then User gives invalid postal code as "23232jfjdkfj-9090"
+    And  User Verifies the Error message "There’s a problem with your post code and/or delivery country. Our NI shipping terms differ from mainland GB. Please refer to Shipping Costs or Contact Us"
+
+#TS-21
+  Scenario: Validation of Service Provider Unavailability error message display for Specific Country when total no of products and Quantity exceeds the limit 
+
+    Given User adds 5 products to the cart 
+    When User increases the quantity of each product to 20
+    When  User selects  Any Country
+    Then  User verifies the Error message in the browser as "Unfortunately, this service provider can not be chosen for delivery with your current total order value. We apologize for the inconvenience!"
+    And User verfies the Proceed to Checkout Button is disabled 
+    
+
+#TS-22
+  Scenario: Validation of Error message when the Subtotal price  value in the cart is lesser than Minimum order value
+
+    Given User adds a product to the cart with price lesser than €19
+    Then  User verifies the Subtotal value is lesser than €19
+    And  User verifies the error message in the browser as "Please note: the minimum order value is €19.00 (without shipping costs)"
+    And User verfies the Proceed to Checkout Button is disabled 
+    
+
+
+
+    
+
+    
