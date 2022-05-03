@@ -32,7 +32,8 @@ ForEg: WebDriverManager.chromedriver().browserVersion("101.0.4951.54").setup() -
 6. If Eclipse , RightClick-> run as JUnit-Test or if Intelij RightClick-> Run RunnerTest.java 
 7. Once the program run completed successfully, Go to Console and See the Validation results printed in the console 
 
-Please note : I have used Assersion from TestNG . Kindly make sure TestNG Jar (Latest 7.2) is downloaded. In case of  Intelij, It will automatically download the Jar once you import the project.
+Please note : I have used Assersion from TestNG . Kindly make sure TestNG Jar (Latest 7.2) is downloaded. 
+In case of  Intelij, It will automatically download the Jar once you import the project.
 
 Software and Plugins Versions used:
 
