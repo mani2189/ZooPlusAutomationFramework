@@ -26,7 +26,8 @@ How to Run the Program:
 1. Go to gitHub repo and Download the Project as Zip into local system 
 2. Go to Eclipse or InteliJ --> Click->File->Import as MavenProject  (Eclipse or Intelij Latest version recommended)
 3. Right Click Project GoTo->Maven->UpdateProject to make sure all the Depedencies are downloaded from pom.xml file
-4. Kindly Ensure that, the browser version should be mentioned in the code which downloads the driver through the code should support your chrome version      ForEg: WebDriverManager.chromedriver().browserVersion("101.0.4951.54").setup() --  (ZooplusSeleniumTask/src/test/java/UtilityPackage/WebDriverManagerSingleton.java)
+4. Kindly Ensure that, the browser version should be mentioned in the code which downloads the driver through the code should support your chrome version      
+ForEg: WebDriverManager.chromedriver().browserVersion("101.0.4951.54").setup() -->(ZooplusSeleniumTask/src/test/java/UtilityPackage/WebDriverManagerSingleton.java)
 5. Go to Runner.java File (/ZooplusSeleniumTask/src/test/java/Runner)
 6. If Eclipse , RightClick-> run as JUnit-Test or if Intelij RightClick-> Run RunnerTest.java 
 7. Once the program run completed successfully, Go to Console and See the Validation results printed in the console 
